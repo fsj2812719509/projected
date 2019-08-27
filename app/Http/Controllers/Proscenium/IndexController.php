@@ -14,7 +14,10 @@ class IndexController extends Controller
     //展示页面
     public function index(){
         //查询轮播图
-        $sli = SliModel::all();
+        $aliwhere = [
+            'status'=>1
+        ];
+        $sli = SliModel::where($aliwhere)->all();
 
         //查询导航栏
         $where3 = [
